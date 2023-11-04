@@ -1,0 +1,1 @@
+This is a repo to show bug for issue raised on https://github.com/tsedio/tsed/issues/2510
