@@ -5,7 +5,6 @@ import "@tsed/platform-express"; // /!\ keep this import
 import "@tsed/ajv";
 import {config} from "./config/index";
 import * as rest from "./controllers/rest/index";
-import LogMiddleware from "./LogMiddleware";
 
 @Configuration({
   ...config,
@@ -25,7 +24,6 @@ import LogMiddleware from "./LogMiddleware";
     "method-override",
     "json-parser",
     { use: "urlencoded-parser", options: { extended: true }},
-    { use: LogMiddleware, hook: '$afterInit' }
   ],
   views: {
     root: join(process.cwd(), "../views"),
