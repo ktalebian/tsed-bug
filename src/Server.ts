@@ -13,7 +13,7 @@ import * as rest from "./controllers/rest/index";
   httpsPort: false, // CHANGE
   disableComponentsScan: true,
   mount: {
-    "/rest": [
+    "/": [
       ...Object.values(rest)
     ]
   },
