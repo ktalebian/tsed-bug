@@ -8,11 +8,13 @@ function IdProperty() {
     return useDecorators(
       Property(String),
       OnDeserialize((id) => {
+        console.log('OnDeserialize', id)
         if (id) {
             return new Id(id);
         }
       }),
       OnSerialize((id) => {
+        console.log('onSerialize', id)
         if (id) {
           return id.getValue();
         }
