@@ -1,7 +1,7 @@
 import {Controller} from "@tsed/di";
 import { $log } from "@tsed/logger";
 import { PathParams } from "@tsed/platform-params";
-import {CollectionOf, Get} from "@tsed/schema";
+import {CollectionOf, Get, Returns} from "@tsed/schema";
 import { Id } from "src/models/Id";
 import { User } from "src/models/User";
 
@@ -49,6 +49,7 @@ export class HelloWorldController {
   }
 
   @Get("/list")
+  @Returns(200, List)
   list() {
     const user1 = new User();
     user1.id = new Id();
@@ -66,8 +67,8 @@ export class HelloWorldController {
   }
 
   @Get("/collection")
+  @Returns(200, Collection)
   collection() {
-    
     const user1 = new User();
     user1.id = new Id();
     user1.name = 'user1';
