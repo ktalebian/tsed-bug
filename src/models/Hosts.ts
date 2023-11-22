@@ -1,7 +1,7 @@
 import { Id, IdProperty } from "./Id";
 import { Property } from "@tsed/schema";
   
-export class User {
+export class Host {
     @IdProperty()
     id: Id;
 
