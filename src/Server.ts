@@ -5,6 +5,7 @@ import "@tsed/platform-express"; // /!\ keep this import
 import "@tsed/ajv";
 import {config} from "./config/index";
 import * as rest from "./controllers/rest/index";
+import { PaginationResponseFilter } from "./ResponseFilter";
 
 @Configuration({
   ...config,
@@ -12,6 +13,7 @@ import * as rest from "./controllers/rest/index";
   httpPort: process.env.PORT || 8083,
   httpsPort: false, // CHANGE
   disableComponentsScan: true,
+  responseFilters: [PaginationResponseFilter],
   mount: {
     "/": [
       ...Object.values(rest)
