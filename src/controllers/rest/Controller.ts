@@ -9,7 +9,7 @@ import { PageMeta } from "src/models/PageMeta";
 @Controller("/")
 export class HelloWorldController {
   @Get("/hosts")
-  @Returns(200, Page<Host>)
+  @Returns(200, Page).Of(Host)
   hosts() {
     const host1 = new Host();
     host1.id = new Id();
