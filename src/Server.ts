@@ -5,10 +5,15 @@ import "@tsed/platform-express"; // /!\ keep this import
 import "@tsed/ajv";
 import {config} from "./config/index";
 import * as rest from "./controllers/rest/index";
+import fsStore from 'cache-manager-fs-hash';
 import { PaginationResponseFilter } from "./ResponseFilter";
 
 @Configuration({
   ...config,
+  cache: {
+    ttl: 300,
+    store: fsStore,
+  },
   acceptMimes: ["application/json"],
   httpPort: process.env.PORT || 8083,
   httpsPort: false, // CHANGE
