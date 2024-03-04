@@ -13,6 +13,7 @@ import { PaginationResponseFilter } from "./ResponseFilter";
   cache: {
     ttl: 300,
     store: fsStore,
+    prefix: 'test'
   },
   acceptMimes: ["application/json"],
   httpPort: process.env.PORT || 8083,
